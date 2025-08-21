@@ -57,6 +57,7 @@ function creerListeDansDOM(list) {
   deleteListBtn.className = "delete-list-btn";
   deleteListBtn.textContent = "X";
   listHeader.appendChild(deleteListBtn);
+  deleteListBtn.setAttribute("aria-label", "Supprimer la liste");
 
   deleteListBtn.addEventListener("click", () => deleteList(list.id));
 
@@ -77,17 +78,23 @@ function creerListeDansDOM(list) {
   addTaskForm.className = "add-task-form";
   listElement.appendChild(addTaskForm);
 
-
-  // *      +label 
-  const taskLabel=document.createElement("label");
-  taskLabel.textContent="Créer une nouvelle Tâche";
+  // *      +label
+  const taskLabel = document.createElement("label");
+  taskLabel.textContent = "Créer une nouvelle Tâche";
+  taskLabel.setAttribute("for", "new-task");
   addTaskForm.appendChild(taskLabel);
+
+  taskLabel.className = "visually-hidden";
 
   const taskInput = document.createElement("input");
   taskInput.type = "text";
   taskInput.className = "add-task-input";
   taskInput.placeholder = "Nouvelle Tâche";
+  taskInput.id = "new-task";
+  taskInput.setAttribute("aria-required", "true");
   addTaskForm.appendChild(taskInput);
+
+  taskInput.removeAttribute("aria-label");
 
   const addTaskBtn = document.createElement("button");
   addTaskBtn.className = "add-task-btn";
@@ -133,6 +140,7 @@ function creeTacheDansDom(taskListElement, taskText) {
   deleteTaskBtn.className = "delete-task-btn";
   deleteTaskBtn.textContent = "X";
   taskElement.appendChild(deleteTaskBtn);
+  deleteTaskBtn.setAttribute("aria-label", "Supprimer la tache");
 
   deleteTaskBtn.addEventListener("click", () => deleteTask(taskId));
 
