@@ -58,7 +58,7 @@ body {
   border: none;
   font-size: 1.2em;
   cursor: pointer;
-  color: #726f6f;
+  color: black;
 }
 
 .kanban-tasks {
@@ -83,7 +83,7 @@ body {
   border: none;
   font-size: 1em;
   cursor: pointer;
-  color: #999;
+  color: black;
 }
 
 .add-task-form {
@@ -106,10 +106,6 @@ body {
   border-radius: 10px;
   cursor: pointer;
 }
-
-/* .kanban-task[draggable="true"] {
-  cursor: move;
-} */
 
 .kanban-task[draggable="true"] {
   cursor: grab;

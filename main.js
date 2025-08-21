@@ -77,6 +77,12 @@ function creerListeDansDOM(list) {
   addTaskForm.className = "add-task-form";
   listElement.appendChild(addTaskForm);
 
+
+  // *      +label 
+  const taskLabel=document.createElement("label");
+  taskLabel.textContent="Créer une nouvelle Tâche";
+  addTaskForm.appendChild(taskLabel);
+
   const taskInput = document.createElement("input");
   taskInput.type = "text";
   taskInput.className = "add-task-input";
